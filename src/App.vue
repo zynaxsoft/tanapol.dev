@@ -65,15 +65,25 @@ export default {
 #app {
   font-family: dejavu;
   -webkit-font-smoothing: antialiased;
+  -webkit-text-size-adjust: 100%;
   -moz-osx-font-smoothing: grayscale;
+  font-size: 15px;
   color: var(--base0);
   background-color: var(--base03);
   margin-top: 60px;
   min-width: 338px;
-  max-width: 500px;
+  max-width: 840px;
   width: 90vw;
-  margin: 0 auto;
-  padding: 5px;
+  margin: auto;
+  left: -3px;
+  position: relative;
+  margin-top: 10px;
+  margin-bottom: 20px;
+  padding: 10px;
+  border-radius: 3px;
+  /*box-shadow: 4px 5px 20px rgba(0, 0, 0, 0.7);*/
+  box-shadow: -4px -5px 12px 0 rgba(255, 255, 255, 0.05),
+              8px 9px 12px 0 rgba(0, 0, 0, 1);
 }
 
 #nav {
@@ -93,12 +103,13 @@ export default {
 .popup .popup-wrapper {
   align-items: center;
   display: flex;
-  box-shadow: 4px 5px 20px rgba(0, 0, 0, 0.7);
   z-index: 1;
   background-color: rgba(253, 246, 227, 1);
-  border: #eee 1px solid;
   border-radius: 3px;
   padding: 1vw;
+  /*box-shadow: 4px 5px 20px rgba(0, 0, 0, 0.7);*/
+  box-shadow: -4px -5px 12px 0 rgba(255, 255, 255, 0.1),
+              8px 9px 12px 0 rgba(0, 0, 0, 1);
 }
 
 @font-face {
