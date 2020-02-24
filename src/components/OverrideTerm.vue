@@ -15,7 +15,7 @@
       v-if="curSeq > 0"
       @done="doOverride"
       msg=""
-      cmdtxt="cat /root/my-secret-token | ./intro --show-everything --override"
+      cmdtxt="cat /root/my-secret-token | ./introduction-dev --show-everything --override && scroll -x 0 -y 0"
       promptTxt="<span class='prompt-host' style='color: var(--red);'>root@tanapol.dev:</span>
                 <span class='prompt-path'>/</span><br># "
       restxt="Done."

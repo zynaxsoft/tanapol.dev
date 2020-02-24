@@ -91,7 +91,7 @@ export default {
       overridden2: false,
       erased: false,
       threshold: 1,
-      throttle: 1500,
+      throttle: 1000,
     }
   },
   methods: {

@@ -1,8 +1,10 @@
 <template>
   <div id="app">
     <Terminal @theyAreHurried="onHurried" class="blur-able"/>
-    <div v-if="hurried && !overridden" class="popup">
-      <OverrideTerm @overriddenTyped="turnOffPopup"/>
+    <div class="popup">
+      <div v-if="hurried && !overridden" class="popup-wrapper">
+        <OverrideTerm @overriddenTyped="turnOffPopup"/>
+      </div>
     </div>
   </div>
 </template>
@@ -80,13 +82,23 @@ export default {
 }
 
 .popup {
-  position: absolute;
-  left: 20vw;
-  top: 50vh;
+  position: fixed;
+  top: 30vh;
+  left: 5vw;
+  width: 90vw;
+  align-items: center;
+  justify-content: center;
+}
+
+.popup .popup-wrapper {
+  align-items: center;
+  display: flex;
+  box-shadow: 4px 5px 20px rgba(0, 0, 0, 0.7);
   z-index: 1;
-  background-color: rgba(253, 246, 227, 0.9);
+  background-color: rgba(253, 246, 227, 1);
+  border: #eee 1px solid;
+  border-radius: 3px;
   padding: 1vw;
-  width: 60vw;
 }
 
 @font-face {

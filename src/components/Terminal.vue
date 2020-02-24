@@ -104,7 +104,7 @@
       />
     <OneCommand
       v-if="curSeq > 5"
-      @done="newSeq"
+      @done="done"
       msg="Hi! My name is Tanapol"
       cmdtxt="./introduction7"
       restxt="
@@ -141,20 +141,25 @@ export default {
   data() {
     return {
       curSeq: 0,
+      finished: false,
     }
   },
   methods: {
     newSeq: function () {
       this.curSeq++;
     },
+    done: function () {
+      this.finished = true;
+    },
     triggerNothingness: function (isVisible) {
-      if (isVisible) {
+      if (isVisible && !this.finished) {
         console.log('Calm down!');
         this.$emit("theyAreHurried");
       }
     },
     showEverything: function () {
       this.curSeq = 100;
+      window.scrollTo(0,0);
       bus.$emit('overrideCommand');
     },
   },
