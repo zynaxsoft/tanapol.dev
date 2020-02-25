@@ -141,10 +141,10 @@ a {
 <style>
 .prompt-host {
   font-weight: 700;
-  color: var(--base01);
+  color: var(--comment);
 }
 .prompt-path {
   font-weight: 700;
-  color: var(--base1);
+  color: var(--emph);
 }
 </style>

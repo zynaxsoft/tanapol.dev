@@ -1,5 +1,6 @@
 <template>
   <div id="app">
+    <Nav />
     <Terminal @theyAreHurried="onHurried" class="blur-able"/>
     <div class="popup">
       <div v-if="hurried && !overridden" class="popup-wrapper">
@@ -12,16 +13,19 @@
 <script>
 import Terminal from './components/Terminal.vue'
 import OverrideTerm from './components/OverrideTerm.vue'
+import Nav from './components/Nav.vue'
 import { bus } from './event-bus.js'
 
 export default {
   name: 'App',
   components: {
+    Nav,
     Terminal,
     OverrideTerm,
   },
   data() {
     return {
+      theme: 0,
       hurried: false,
       overridden: false,
     }
@@ -40,6 +44,40 @@ export default {
       }, 2000)
     },
   },
+  created: function () {
+    bus.$on('switchTheme', () => {
+      let root = document.documentElement;
+      if (this.theme == 0) {
+        this.theme = 1;
+        /*light*/
+        root.style.setProperty('--background', "#fdf6e3");
+        root.style.setProperty('--text', "#657b83");
+        root.style.setProperty('--emph', "#586e75");
+        root.style.setProperty('--comment', "#93a1a1");
+        root.style.setProperty('--bg-hl', "#eee8d5");
+        /*dark*/
+        root.style.setProperty('--background-op', "#002b36");
+        root.style.setProperty('--text-op', "#839496");
+        root.style.setProperty('--emph-op', "#93a1a1");
+        root.style.setProperty('--comment-op', "#586e75");
+        root.style.setProperty('--bg-hl-op', "#073642");
+      } else {
+        this.theme = 0;
+        /*light*/
+        root.style.setProperty('--background-op', "#fdf6e3");
+        root.style.setProperty('--text-op', "#657b83");
+        root.style.setProperty('--emph-op', "#586e75");
+        root.style.setProperty('--comment-op', "#93a1a1");
+        root.style.setProperty('--bg-hl-op', "#eee8d5");
+        /*dark*/
+        root.style.setProperty('--background', "#002b36");
+        root.style.setProperty('--text', "#839496");
+        root.style.setProperty('--emph', "#93a1a1");
+        root.style.setProperty('--comment', "#586e75");
+        root.style.setProperty('--bg-hl', "#073642");
+      }
+    });
+  },
 }
 </script>
 
@@ -53,6 +91,7 @@ export default {
   --base1: #93a1a1;
   --base2: #eee8d5;
   --base3: #fdf6e3;
+
   --yellow: #b58900;
   --orange: #cb4b16;
   --red: #dc322f;
@@ -61,6 +100,20 @@ export default {
   --blue: #268bd2;
   --cyan: #2aa198;
   --green: #859900;
+
+
+  /*light*/
+  --background-op: #fdf6e3;
+  --text-op: #657b83;
+  --emph-op: #586e75;
+  --comment-op: #93a1a1;
+  --bg-hl-op: #eee8d5;
+  /*dark*/
+  --background: #002b36;
+  --text: #839496;
+  --emph: #93a1a1;
+  --comment: #586e75;
+  --bg-hl: #073642;
 }
 #app {
   font-family: dejavu;
@@ -68,8 +121,8 @@ export default {
   -webkit-text-size-adjust: 100%;
   -moz-osx-font-smoothing: grayscale;
   font-size: 15px;
-  color: var(--base0);
-  background-color: var(--base03);
+  color: var(--text);
+  background-color: var(--background);
   margin-top: 60px;
   min-width: 338px;
   max-width: 840px;
@@ -88,7 +141,7 @@ export default {
 
 #nav {
   border-style: solid;
-  border-color: var(--base02);
+  border-color: var(--bg-hl);
 }
 
 .popup {
@@ -121,10 +174,10 @@ export default {
   font-family: dejavu;
 }
 .vue-typer .custom.char {
-  color: var(--base0);
+  color: var(--text);
 }
 .vue-typer .custom.caret {
   width: 10px;
-  background-color: var(--base0);
+  background-color: var(--text);
 }
 </style>

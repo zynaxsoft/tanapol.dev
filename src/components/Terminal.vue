@@ -152,11 +152,10 @@ export default {
       this.finished = true;
     },
     triggerNothingness: function (isVisible) {
-        isVisible;
-      // if (isVisible && !this.finished) {
-      //   console.log('Calm down!');
-      //   this.$emit("theyAreHurried");
-      // }
+      if (isVisible && !this.finished) {
+        console.log('Calm down!');
+        this.$emit("theyAreHurried");
+      }
     },
     showEverything: function () {
       this.curSeq = 100;
@@ -175,8 +174,8 @@ export default {
   padding-bottom: 300vh;
 }
 .nothing-ness {
-  background-color: var(--base0);
-  color: var(--base02);
+  background-color: var(--bg-hl);
+  color: var(--text);
   font-weight: 600;
   padding: 5px;
   text-align: center;
