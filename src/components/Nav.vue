@@ -1,6 +1,6 @@
 <template>
   <div class="nav">
-    <NeuButton press-event="switchTheme"/>
+    <NeuButton press-event="switchTheme">Solarized!</NeuButton>
   </div>
 </template>
 

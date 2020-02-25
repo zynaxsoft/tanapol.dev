@@ -1,6 +1,6 @@
 <template>
   <div @click="onClick" class="neubutton" v-bind:class="{ 'neuactive': isActive }">
-  Solarized
+    <slot></slot>
   </div>
 </template>
 
