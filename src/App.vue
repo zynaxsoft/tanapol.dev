@@ -54,13 +54,21 @@ export default {
     },
     onHurried: function () {
       this.hurried = true;
-      document.getElementsByClassName("blur-able")[0].style.filter = "blur(2px)";
+      let blurable = document.getElementsByClassName("blur-able")
+      let i;
+      for (i = 0; i < blurable.length; i++) {
+        blurable[i].style.filter = "blur(2px)";
+      }
     },
     turnOffPopup: function () {
       bus.$emit('overrideTerminal');
       setTimeout(() => {
         bus.$emit('overrideTerminal');
-        document.getElementsByClassName("blur-able")[0].style.filter = "";
+        let blurable = document.getElementsByClassName("blur-able")
+        let i;
+        for (i = 0; i < blurable.length; i++) {
+          blurable[i].style.filter = "";
+        }
         this.overridden = true;
       }, 2000)
     },

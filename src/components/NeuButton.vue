@@ -1,5 +1,5 @@
 <template>
-  <div @click="onClick" class="neubutton" v-bind:class="{ 'neuactive': isActive }">
+  <div @click="onClick" class="neubutton blur-able" v-bind:class="{ 'neuactive': isActive }">
     <slot></slot>
   </div>
 </template>
