@@ -82,8 +82,8 @@ export default {
   padding: 10px;
   border-radius: 3px;
   /*box-shadow: 4px 5px 20px rgba(0, 0, 0, 0.7);*/
-  box-shadow: -4px -5px 12px 0 rgba(255, 255, 255, 0.05),
-              8px 9px 12px 0 rgba(0, 0, 0, 1);
+  box-shadow: -5px -6px 8px 0 rgba(255, 255, 255, 0.02),
+              14px 18px 10px 0 rgba(0, 0, 0, 0.1);
 }
 
 #nav {
@@ -109,7 +109,7 @@ export default {
   padding: 1vw;
   /*box-shadow: 4px 5px 20px rgba(0, 0, 0, 0.7);*/
   box-shadow: -4px -5px 12px 0 rgba(255, 255, 255, 0.1),
-              8px 9px 12px 0 rgba(0, 0, 0, 1);
+              8px 9px 12px 0 rgba(0, 0, 0, 0.5);
 }
 
 @font-face {
