@@ -1,6 +1,6 @@
 <template>
   <div class="nav">
-    <NeuButton press-event="switchTheme">Solarized!</NeuButton>
+    <NeuButton v-if="showButtons" press-event="switchTheme">Solarized!</NeuButton>
   </div>
 </template>
 
@@ -18,6 +18,7 @@ export default {
   },
   data() {
     return {
+      showButtons: false,
     }
   },
   methods: {
@@ -25,8 +26,9 @@ export default {
   watch: {
   },
   created: function () {
-    bus.$on('overrideCommand', () => {
-      })
+    bus.$on('showNav', () => {
+      this.showButtons = true;
+    })
   },
 }
 </script>

@@ -1,6 +1,15 @@
 <template>
   <div id="app">
-    <Nav />
+    <Nav
+    v-observe-visibility="{
+      callback: showNav,
+      intersection: {
+        threshold: 1,
+        },
+      throttle: 200,
+      }"
+      />
+    <NeuButton press-event="switchTheme">Solarized!</NeuButton>
     <Terminal @theyAreHurried="onHurried" class="blur-able"/>
     <div class="popup">
       <div v-if="hurried && !overridden" class="popup-wrapper">
@@ -14,12 +23,14 @@
 import Terminal from './components/Terminal.vue'
 import OverrideTerm from './components/OverrideTerm.vue'
 import Nav from './components/Nav.vue'
+import NeuButton from './components/NeuButton.vue'
 import { bus } from './event-bus.js'
 
 export default {
   name: 'App',
   components: {
     Nav,
+    NeuButton,
     Terminal,
     OverrideTerm,
   },
@@ -28,9 +39,19 @@ export default {
       theme: 0,
       hurried: false,
       overridden: false,
+      didShowNav: false,
     }
   },
   methods: {
+    showNav: function(isVisible) {
+      if (isVisible) {
+        return;
+      }
+      if (!this.didShowNav) {
+        bus.$emit('showNav');
+        this.didShowNav = true;
+      }
+    },
     onHurried: function () {
       this.hurried = true;
       document.getElementsByClassName("blur-able")[0].style.filter = "blur(2px)";
