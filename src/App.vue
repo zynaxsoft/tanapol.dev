@@ -47,6 +47,7 @@ export default {
   created: function () {
     bus.$on('switchTheme', () => {
       let root = document.documentElement;
+      let appE = document.getElementById("app");
       if (this.theme == 0) {
         this.theme = 1;
         /*light*/
@@ -61,6 +62,8 @@ export default {
         root.style.setProperty('--emph-op', "#93a1a1");
         root.style.setProperty('--comment-op', "#586e75");
         root.style.setProperty('--bg-hl-op', "#073642");
+        appE.style.boxShadow = `-6px -6px 11px 0 rgba(255, 255, 255, 0.4),
+                               14px 18px 10px 0 rgba(0, 0, 0, 0.1)`;
       } else {
         this.theme = 0;
         /*light*/
@@ -75,6 +78,8 @@ export default {
         root.style.setProperty('--emph', "#93a1a1");
         root.style.setProperty('--comment', "#586e75");
         root.style.setProperty('--bg-hl', "#073642");
+        appE.style.boxShadow = `-5px -6px 8px 0 rgba(255, 255, 255, 0.02),
+                                14px 18px 10px 0 rgba(0, 0, 0, 0.1)`;
       }
     });
   },
