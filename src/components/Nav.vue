@@ -48,6 +48,13 @@ export default {
       this.showButtons = true;
     })
   },
+  mounted: function() {
+    if (this.$router.currentRoute.path == "/") {
+      bus.$emit("neupress", 0);
+    } else if (this.$router.currentRoute.path == "/contact") {
+      bus.$emit("neupress", 1);
+    }
+  },
 }
 </script>
 

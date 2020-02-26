@@ -44,8 +44,12 @@ export default {
       if (this.independent) {
         return;
       }
+      if (!this.isActive && this.count < 1) {
+        this.isActive = true;
+      }
       if (this.isActive && this.id != pressedId) {
         this.isActive = false;
+        return;
       }
     })
   },
