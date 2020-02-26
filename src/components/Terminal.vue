@@ -1,27 +1,17 @@
 <template>
   <div id="terminal" class="blur-able">
     <OneCommand v-if="curSeq > -1" @done="newSeq" cmdtxt="./introduction1">
-      restxt="
-      Wooooothis is<br> goodboy
-      Wooooothis is<br> goodboy
-      Wooooothis is<br> goodboy
-      Wooooothis is<br> goodboy
-      Wooooothis is<br> goodboy
-      Wooooothis is<br> goodboy
-      Wooooothis is<br> goodboy
-      Wooooothis is<br> goodboy
-      Wooooothis is<br> goodboy
-      Wooooothis is<br> goodboy
-      Wooooothis is<br> goodboy
-      Wooooothis is<br> goodboy
-      Wooooothis is<br> goodboy
-      Wooooothis is<br> goodboy
-      Wooooothis is<br> goodboy
-      Wooooothis is<br> goodboy
-      Wooooothis is<br> goodboy
-      Wooooothis is<br> goodboy
-      Wooooothis is<br> goodboy
-      "
+    Hi! I am a recent graduated Ph.D. and an enthusiastic software engineer that loves and enjoys developing software with new technologies.
+    <br><br>
+    After, I received my Ph.D. degree in Robotics from JAIST. I joined QBIT Robotics to develop and design Omotenashi System and other software. I have maintained, developed software from scratch.
+    <br>
+    My knowledge and experiences include:<br>
+    <span class="bullet">*</span> Software development in Python.<br>
+    <span class="bullet">*</span> AWS, Docker, NGINX, Django, Git, GNU/Linux.<br>
+    <span class="bullet">*</span> Machine Learning: Deep learning, Reinforcement learning, etc.<br>
+    <span class="bullet">*</span> Robotics and a little bit of Neuroscience.<br>
+    Furthermore, I am into developing my new skills such as DevOps, Microservices, and Front-end software.
+    <br>
     </OneCommand>
     <OneCommand v-if="curSeq > 0" @done="done" cmdtxt="./introduction7" :showLastPrompt="true">
       restxt="
@@ -86,6 +76,17 @@ export default {
 </script>
 
 <style scoped>
+span.bullet {
+  margin-left: 2em;
+  font-weight: 600;
+}
+span.bold {
+  font-weight: 600;
+}
+span.emph {
+  color: var(--emph);
+}
+
 .empty-spaces {
   padding-bottom: 300vh;
 }
