@@ -57,6 +57,7 @@ export default {
     onHurried: function () {
       this.hurried = true;
       let blurable = document.getElementsByClassName("blur-able")
+      document.getElementById("app").style.pointerEvents = "none";
       let i;
       for (i = 0; i < blurable.length; i++) {
         blurable[i].style.filter = "blur(2px)";
@@ -72,6 +73,7 @@ export default {
           blurable[i].style.filter = "";
         }
         this.overridden = true;
+        document.getElementById("app").style.pointerEvents = "";
       }, 2000)
     },
   },
