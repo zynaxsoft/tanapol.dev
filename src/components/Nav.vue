@@ -35,31 +35,6 @@ export default {
           text: "Contact",
           page: "/contact",
         },
-        {
-          id: 2,
-          text: "Contact",
-          page: "/contact",
-        },
-        {
-          id: 3,
-          text: "Contact",
-          page: "/contact",
-        },
-        {
-          id: 4,
-          text: "Contact",
-          page: "/contact",
-        },
-        {
-          id: 5,
-          text: "Contact",
-          page: "/contact",
-        },
-        {
-          id: 6,
-          text: "Contact",
-          page: "/contact",
-        },
       ],
       showButtons: true,
     }
