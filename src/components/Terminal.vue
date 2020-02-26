@@ -1,10 +1,6 @@
 <template>
   <div id="terminal" class="blur-able">
-    <OneCommand
-      v-if="curSeq > -1"
-      @done="newSeq"
-      msg="Hi! My name is Tanapol"
-      cmdtxt="./introduction1"
+    <OneCommand v-if="curSeq > -1" @done="newSeq" cmdtxt="./introduction1">
       restxt="
       Wooooothis is<br> goodboy
       Wooooothis is<br> goodboy
@@ -26,94 +22,14 @@
       Wooooothis is<br> goodboy
       Wooooothis is<br> goodboy
       "
-      />
-    <OneCommand
-      v-if="curSeq > 0"
-      @done="newSeq"
-      msg="Hi! My name is Tanapol"
-      cmdtxt="./introduction2"
-      restxt="
-      Wooooo<br>this is good<br> boy
-      If you are considering developing a port for Solarized, please see also the developer notes for information about optional repository structure and readme formats.
-
-      Solarized flips between light and dark modes. In each mode, four monotones form the core values (with an optional fifth for emphasized content).
-      If you are considering developing a port for Solarized, please see also the developer notes for information about optional repository structure and readme formats.
-
-      Solarized flips between light and dark modes. In each mode, four monotones form the core values (with an optional fifth for emphasized content).
-      "
-      />
-    <OneCommand
-      v-if="curSeq > 1"
-      @done="newSeq"
-      msg="Hi! My name is Tanapol"
-      cmdtxt="./introduction3"
-      restxt="
-      Wooooo<br>this is good<br> boy
-      If you are considering developing a port for Solarized, please see also the developer notes for information about optional repository structure and readme formats.
-
-      Solarized flips between light and dark modes. In each mode, four monotones form the core values (with an optional fifth for emphasized content).
-      If you are considering developing a port for Solarized, please see also the developer notes for information about optional repository structure and readme formats.
-
-      Solarized flips between light and dark modes. In each mode, four monotones form the core values (with an optional fifth for emphasized content).
-      "
-      />
-    <OneCommand
-      v-if="curSeq > 2"
-      @done="newSeq"
-      msg="Hi! My name is Tanapol"
-      cmdtxt="./introduction4"
-      restxt="
-      Wooooo<br>this is good<br> boy
-      If you are considering developing a port for Solarized, please see also the developer notes for information about optional repository structure and readme formats.
-
-      Solarized flips between light and dark modes. In each mode, four monotones form the core values (with an optional fifth for emphasized content).
-      If you are considering developing a port for Solarized, please see also the developer notes for information about optional repository structure and readme formats.
-
-      Solarized flips between light and dark modes. In each mode, four monotones form the core values (with an optional fifth for emphasized content).
-      "
-      />
-    <OneCommand
-      v-if="curSeq > 3"
-      @done="newSeq"
-      msg="Hi! My name is Tanapol"
-      cmdtxt="./introduction5"
-      restxt="
-      Wooooo<br>this is good<br> boy
-      If you are considering developing a port for Solarized, please see also the developer notes for information about optional repository structure and readme formats.
-
-      Solarized flips between light and dark modes. In each mode, four monotones form the core values (with an optional fifth for emphasized content).
-      If you are considering developing a port for Solarized, please see also the developer notes for information about optional repository structure and readme formats.
-
-      Solarized flips between light and dark modes. In each mode, four monotones form the core values (with an optional fifth for emphasized content).
-      "
-      />
-    <OneCommand
-      v-if="curSeq > 4"
-      @done="newSeq"
-      msg="Hi! My name is Tanapol"
-      cmdtxt="./introduction6"
-      restxt="
-      Wooooo<br>this is good<br> boy
-      If you are considering developing a port for Solarized, please see also the developer notes for information about optional repository structure and readme formats.
-
-      Solarized flips between light and dark modes. In each mode, four monotones form the core values (with an optional fifth for emphasized content).
-      If you are considering developing a port for Solarized, please see also the developer notes for information about optional repository structure and readme formats.
-
-      Solarized flips between light and dark modes. In each mode, four monotones form the core values (with an optional fifth for emphasized content).
-      "
-      />
-    <OneCommand
-      v-if="curSeq > 5"
-      @done="done"
-      msg="Hi! My name is Tanapol"
-      cmdtxt="./introduction7"
+    </OneCommand>
+    <OneCommand v-if="curSeq > 0" @done="done" cmdtxt="./introduction7" :showLastPrompt="true">
       restxt="
       If you are considering developing a port for Solarized, please see also the developer notes for information about optional repository structure and readme formats.
 
       Solarized flips between light and dark modes. In each mode, four monotones form the core values (with an optional fifth for emphasized content).
       "
-      :showLastPrompt="true"
-      />
+    </OneCommand>
     <div class="empty-spaces"></div>
     <div class="nothing-ness"
          v-observe-visibility="{

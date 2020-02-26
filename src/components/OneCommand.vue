@@ -1,6 +1,6 @@
 <template>
   <div class="command">
-    <h1 v-observe-visibility="{
+    <div v-observe-visibility="{
       callback: visib,
       intersection: {
         threshold,
@@ -8,7 +8,7 @@
       throttle,
       once: true,
       }">
-    {{ msg }}</h1>
+    </div>
     <span v-html="promptTxt"></span>
     <vue-typer
       v-if="!seen"
@@ -41,7 +41,7 @@
       @typed="onTyped"
     ></vue-typer>
     <br/>
-    <span class="result" v-if="typedCmd || overridden2" v-html="restxt"></span>
+    <span class="result" v-if="typedCmd || overridden2"><slot></slot></span>
     <br/>
     <span v-if="typedCmd && showLastPrompt" v-html="promptTxt"></span>
     <vue-typer
@@ -65,7 +65,6 @@ export default {
   props: {
     msg: String,
     cmdtxt: String,
-    restxt: String,
     promptTxt: {
       type: String,
       default: `<span class="prompt-host">me@tanapol.dev:</span>`

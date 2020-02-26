@@ -36,7 +36,7 @@ export default {
           page: "/contact",
         },
       ],
-      showButtons: true,
+      showButtons: false,
     }
   },
   methods: {

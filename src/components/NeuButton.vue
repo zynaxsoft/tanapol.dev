@@ -77,11 +77,11 @@ export default {
   -o-user-select: none;
   background-color: var(--bg-hl);
   color: var(--text);
-  width: 10em;
-  height: 3em;
+  width: 8em;
+  height: 2.2em;
+  line-height: 2.2em;
   font-weight: 600;
   padding: 5px;
-  line-height: 3em;
   text-align: center;
   box-shadow: -3px -4px 8px 0 rgba(255, 255, 255, 0.1),
               8px 8px 10px 0 rgba(0, 0, 0, 0.2);
