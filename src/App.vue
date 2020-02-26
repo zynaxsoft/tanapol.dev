@@ -1,5 +1,6 @@
 <template>
   <div id="app">
+    <div id="nav-bar">
     <Nav
     v-observe-visibility="{
       callback: showNav,
@@ -9,7 +10,10 @@
       throttle: 200,
       }"
       />
+    </div>
+    <div id="solarized-button">
     <NeuButton press-event="switchTheme" :independent="true" :id="999">Solarized!</NeuButton>
+    </div>
     <router-view />
     <div class="popup">
       <div v-if="hurried && !overridden" class="popup-wrapper">
@@ -148,6 +152,16 @@ export default {
   --comment: #586e75;
   --bg-hl: #073642;
 }
+#nav-bar {
+  width: 50%;
+}
+
+#solarized-button {
+  position: absolute;
+  top: 1em;
+  right: 1em;
+}
+
 #app {
   font-family: dejavu;
   -webkit-font-smoothing: antialiased;

@@ -1,11 +1,10 @@
 <template>
-  <div class="nav">
+  <div class="navi">
     <nav>
     <router-link class="button-link" v-for="routes in links"
         v-bind:key="routes.id"
         :to="`${routes.page}`">
-      <NeuButton v-if="showButtons" :id="routes.id"
-        >Solarized!</NeuButton>
+      <NeuButtonSmol v-if="showButtons" :id="routes.id">{{ routes.text }}</NeuButtonSmol>
     </router-link>
     </nav>
   </div>
@@ -14,12 +13,12 @@
 <script>
 
 import { bus } from '../event-bus.js'
-import NeuButton from './NeuButton.vue'
+import NeuButtonSmol from './NeuButtonSmol.vue'
 
 export default {
   name: 'Nav',
   components: {
-    NeuButton,
+    NeuButtonSmol,
   },
   props: {
   },
@@ -33,6 +32,31 @@ export default {
         },
         {
           id: 1,
+          text: "Contact",
+          page: "/contact",
+        },
+        {
+          id: 2,
+          text: "Contact",
+          page: "/contact",
+        },
+        {
+          id: 3,
+          text: "Contact",
+          page: "/contact",
+        },
+        {
+          id: 4,
+          text: "Contact",
+          page: "/contact",
+        },
+        {
+          id: 5,
+          text: "Contact",
+          page: "/contact",
+        },
+        {
+          id: 6,
           text: "Contact",
           page: "/contact",
         },
@@ -53,6 +77,12 @@ export default {
 </script>
 
 <style scoped>
+.navi {
+  margin-bottom: 3.5em;
+}
+.button-link {
+  margin-right: 1em;
+}
 .button-link:link {
   text-decoration: none;
 }
