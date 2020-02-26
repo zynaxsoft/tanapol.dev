@@ -1,5 +1,5 @@
 <template>
-  <div id="terminal">
+  <div id="terminal" class="blur-able">
     <OneCommand
       v-if="curSeq > -1"
       @done="newSeq"
@@ -154,7 +154,7 @@ export default {
     triggerNothingness: function (isVisible) {
       if (isVisible && !this.finished) {
         console.log('Calm down!');
-        this.$emit("theyAreHurried");
+        bus.$emit("theyAreHurried");
       }
     },
     showEverything: function () {

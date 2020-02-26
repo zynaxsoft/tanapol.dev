@@ -11,38 +11,62 @@ import { bus } from '../event-bus.js'
 export default {
   name: 'NeuButton',
   props: {
-    pressEvent: String,
+    id: Number,
+    pressEvent: {
+      type: String,
+      required: false,
+    },
+    independent: {
+      type: Boolean,
+      default: false,
+    },
   },
   data() {
     return {
       isActive: false,
-      state: 0, // 0 for dark, 1 for light
+      count: 0,
     }
   },
   methods: {
     onClick: function () {
-      if (this.state == 0) {
-        this.state = 1;
-        this.isActive = true;
-      } else {
-        this.state = 0;
-        this.isActive = false;
+      if (this.independent) {
+        if (!this.isActive) {
+          this.isActive = true;
+        } else {
+          this.isActive = false;
+        }
+        if (this.pressEvent != undefined) {
+          bus.$emit(this.pressEvent);
+        }
+        return;
       }
-      bus.$emit(this.pressEvent);
+      if (this.count < 1) {
+        this.count++;
+      }
+      if (this.pressEvent != undefined) {
+        bus.$emit(this.pressEvent);
+      }
+      if (!this.isActive) {
+        this.isActive = true;
+        bus.$emit('neupress', this.id);
+      }
     },
   },
   watch: {
-    state: function (value) {
-      if (value == 0) {
-        document.getElementsByClassName("neubutton")[0].style.boxShadow = `blur(2px)`;
-      } else {
-        value;
-      }
-    }
   },
   created: function () {
-    bus.$on('overrideCommand', () => {
-      })
+    bus.$on('neupress', (pressedId) => {
+      if (this.independent) {
+        return;
+      }
+      if (this.isActive && this.id != pressedId) {
+        this.isActive = false;
+      } else {
+        if (this.count > 0) {
+          this.isActive = true;
+        }
+      }
+    })
   },
 }
 </script>

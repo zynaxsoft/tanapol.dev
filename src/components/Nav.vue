@@ -1,6 +1,13 @@
 <template>
   <div class="nav">
-    <NeuButton v-if="showButtons" press-event="switchTheme">Solarized!</NeuButton>
+    <nav>
+    <router-link class="button-link" v-for="routes in links"
+        v-bind:key="routes.id"
+        :to="`${routes.page}`">
+      <NeuButton v-if="showButtons" :id="routes.id"
+        >Solarized!</NeuButton>
+    </router-link>
+    </nav>
   </div>
 </template>
 
@@ -18,7 +25,19 @@ export default {
   },
   data() {
     return {
-      showButtons: false,
+      links: [
+        {
+          id: 0,
+          text: "About",
+          page: "/",
+        },
+        {
+          id: 1,
+          text: "Contact",
+          page: "/contact",
+        },
+      ],
+      showButtons: true,
     }
   },
   methods: {
@@ -34,4 +53,10 @@ export default {
 </script>
 
 <style scoped>
+.button-link:link {
+  text-decoration: none;
+}
+.button-link:visited {
+  text-decoration: none;
+}
 </style>

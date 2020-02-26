@@ -9,8 +9,8 @@
       throttle: 200,
       }"
       />
-    <NeuButton press-event="switchTheme">Solarized!</NeuButton>
-    <Terminal @theyAreHurried="onHurried" class="blur-able"/>
+    <NeuButton press-event="switchTheme" :independent="true" :id="999">Solarized!</NeuButton>
+    <router-view />
     <div class="popup">
       <div v-if="hurried && !overridden" class="popup-wrapper">
         <OverrideTerm @overriddenTyped="turnOffPopup"/>
@@ -20,7 +20,6 @@
 </template>
 
 <script>
-import Terminal from './components/Terminal.vue'
 import OverrideTerm from './components/OverrideTerm.vue'
 import Nav from './components/Nav.vue'
 import NeuButton from './components/NeuButton.vue'
@@ -31,7 +30,6 @@ export default {
   components: {
     Nav,
     NeuButton,
-    Terminal,
     OverrideTerm,
   },
   data() {
@@ -74,6 +72,7 @@ export default {
     },
   },
   created: function () {
+    bus.$on('theyAreHurried', this.onHurried);
     bus.$on('switchTheme', () => {
       let root = document.documentElement;
       let appE = document.getElementById("app");
