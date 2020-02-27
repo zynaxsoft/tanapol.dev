@@ -77,15 +77,7 @@ export default {
   border-radius: 3px;
   background-color: var(--background);
   display: inline-block;
-  margin-bottom: 1em;
-}
-.neubutton:hover {
-  /*
-  padding: 4px;
-  border-color: var(--comment);
-  border-style: solid;
-  border-width: 1px;
-  */
+  margin-bottom: 0.5em;
 }
 .neuactive, .neubutton:active {
   box-shadow: -11px -6px 14px 0 rgba(255, 255, 255, 0.04) inset,

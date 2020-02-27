@@ -7,6 +7,10 @@
       <NeuButtonSmol v-if="showButtons" :id="routes.id">{{ routes.text }}</NeuButtonSmol>
     </router-link>
     </nav>
+    <SocialButton v-if="showButtons" social="github" link="https://www.github.com/zynaxsoft" />
+    <SocialButton v-if="showButtons" social="twitter" link="https://www.twitter.com/tanapoldev" />
+    <SocialButton v-if="showButtons" social="linkedin" link="https://www.linkedin.com/in/tanapol-pr" />
+    <SocialButton v-if="showButtons" social="mail" link="mailto:me@tanapol.dev" />
   </div>
 </template>
 
@@ -14,11 +18,13 @@
 
 import { bus } from '../event-bus.js'
 import NeuButtonSmol from './NeuButtonSmol.vue'
+import SocialButton from './SocialButton.vue'
 
 export default {
   name: 'Nav',
   components: {
     NeuButtonSmol,
+    SocialButton,
   },
   props: {
   },
@@ -61,7 +67,7 @@ export default {
 
 <style scoped>
 .navi {
-  margin-bottom: 3.5em;
+  margin-bottom: 2.7em;
 }
 .button-link {
   margin-right: 1em;

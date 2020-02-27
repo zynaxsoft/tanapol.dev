@@ -16,7 +16,7 @@
     Furthermore, I am developing my new skills such as Rust, Microservices, and Front-end software.
     <br>
     <a href="https://photo.tanapol.dev/" target="_blank">
-      <img src="@/assets/photograph.png" id="photograph" class="neuimg"><br>
+      <img src="@/assets/photograph.jpg" id="photograph" class="neuimg"><br>
     </a>
     </OneCommand>
     <OneCommand v-if="curSeq > 0" @done="done" cmdtxt="./introduction7" :showLastPrompt="true">
