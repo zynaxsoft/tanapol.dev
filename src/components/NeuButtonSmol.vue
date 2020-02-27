@@ -29,7 +29,12 @@ export default {
         this.count++;
       }
       if (this.pressEvent != undefined) {
-        bus.$emit(this.pressEvent);
+        setTimeout(
+          () => {bus.$emit(this.pressEvent);}, 200
+        )
+        setTimeout(
+          () => {bus.$emit(this.pressEvent);}, 200
+        )
       }
       if (!this.isActive) {
         this.isActive = true;

@@ -11,12 +11,18 @@ export default new Router({
     {
       path: '/',
       name: 'Terminal',
-      component: Terminal
+      component: Terminal,
+      meta: {
+        title: 'About Tanapol',
+      }
     },
     {
       path: '/contact',
       name: 'Contact',
-      component: Contact
+      component: Contact,
+      meta: {
+        title: 'Contact Tanapol',
+      }
     },
   ]
 })

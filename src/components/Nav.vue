@@ -4,7 +4,7 @@
     <router-link class="button-link" v-for="routes in links"
         v-bind:key="routes.id"
         :to="`${routes.page}`">
-      <NeuButtonSmol v-if="showButtons" :id="routes.id">{{ routes.text }}</NeuButtonSmol>
+      <NeuButtonSmol v-if="showButtons" :id="routes.id" v-bind:pressEvent="routes.event">{{ routes.text }}</NeuButtonSmol>
     </router-link>
     </nav>
     <SocialButton v-if="showButtons" social="github" link="https://www.github.com/zynaxsoft" />
@@ -35,11 +35,13 @@ export default {
           id: 0,
           text: "About",
           page: "/",
+          event: "overrideTerminal",
         },
         {
           id: 1,
           text: "Contact",
           page: "/contact",
+          event: "",
         },
       ],
       showButtons: true,

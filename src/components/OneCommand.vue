@@ -80,7 +80,11 @@ export default {
     },
     typeDelay: {
       type: Number,
-      default: 200,
+      default: 170,
+    },
+    throttle: {
+      type: Number,
+      default: 1000,
     },
   },
   data() {
@@ -90,7 +94,6 @@ export default {
       overridden2: false,
       erased: false,
       threshold: 1,
-      throttle: 1000,
     }
   },
   methods: {

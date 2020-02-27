@@ -1,6 +1,6 @@
 <template>
   <div id="terminal" class="blur-able">
-    <OneCommand v-if="curSeq > -1" @done="newSeq" cmdtxt="./introduction1">
+    <OneCommand v-if="curSeq > -1" @done="newSeq" cmdtxt="./introduction">
     <a href=/me.png target="_blank">
       <img src="/me.png" id="profile-pic" class="neuimg"><br>
     </a>
@@ -19,7 +19,7 @@
       <img src="@/assets/photograph.jpg" id="photograph" class="neuimg"><br>
     </a>
     </OneCommand>
-    <OneCommand v-if="curSeq > 0" @done="done" cmdtxt="./introduction7" :showLastPrompt="true">
+    <OneCommand v-if="curSeq > 0" @done="done" cmdtxt="cat site-inspiration.txt" :showLastPrompt="true">
     About this website. I crated this website with my basic knowledge of JavaScript + Vue-cli. I chose the design to be terminal-like. The color theme I use is the famous Solarized color palette. I tried to make the website look and feel like Neumorphism design with my wonderful CSS skill (please don't look at it).
 
     <br>

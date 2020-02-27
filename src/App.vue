@@ -117,6 +117,14 @@ export default {
       }
     });
   },
+  watch: {
+    '$route': {
+      immediate: true,
+      handler(to) {
+        document.title = to.meta.title || 'Tanapol'
+      }
+    }
+  },
 }
 </script>
 
