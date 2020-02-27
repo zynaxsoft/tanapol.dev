@@ -36,7 +36,7 @@ export default {
           page: "/contact",
         },
       ],
-      showButtons: false,
+      showButtons: true,
     }
   },
   methods: {
@@ -50,6 +50,7 @@ export default {
   },
   mounted: function() {
     if (this.$router.currentRoute.path == "/") {
+      this.showButtons = false;
       bus.$emit("neupress", 0);
     } else if (this.$router.currentRoute.path == "/contact") {
       bus.$emit("neupress", 1);

@@ -1,24 +1,29 @@
 <template>
   <div id="terminal" class="blur-able">
     <OneCommand v-if="curSeq > -1" @done="newSeq" cmdtxt="./introduction1">
-    Hi! I am a recent graduated Ph.D. and an enthusiastic software engineer that loves and enjoys developing software with new technologies.
+    <a href=/me.png target="_blank">
+      <img src="/me.png" id="profile-pic" class="neuimg"><br>
+    </a>
+    <i>"Hi! I am Tanapol Prucksakorn, a full stack engineer, a recent graduated Ph.D., and an enthusiastic software developer that loves and enjoys building software with new technologies."</i>
     <br><br>
     After, I received my Ph.D. degree in Robotics from JAIST. I joined QBIT Robotics to develop and design Omotenashi System and other software. I have maintained, developed software from scratch.
-    <br>
+    <br><br>
     My knowledge and experiences include:<br>
     <span class="bullet">*</span> Software development in Python.<br>
     <span class="bullet">*</span> AWS, Docker, NGINX, Django, Git, GNU/Linux.<br>
     <span class="bullet">*</span> Machine Learning: Deep learning, Reinforcement learning, etc.<br>
     <span class="bullet">*</span> Robotics and a little bit of Neuroscience.<br>
-    Furthermore, I am into developing my new skills such as DevOps, Microservices, and Front-end software.
+    Furthermore, I am developing my new skills such as Rust, Microservices, and Front-end software.
     <br>
+    <a href="https://photo.tanapol.dev/" target="_blank">
+      <img src="@/assets/photograph.png" id="photograph" class="neuimg"><br>
+    </a>
     </OneCommand>
     <OneCommand v-if="curSeq > 0" @done="done" cmdtxt="./introduction7" :showLastPrompt="true">
-      restxt="
-      If you are considering developing a port for Solarized, please see also the developer notes for information about optional repository structure and readme formats.
+    About this website. I crated this website with my basic knowledge of JavaScript + Vue-cli. I chose the design to be terminal-like. The color theme I use is the famous Solarized color palette. I tried to make the website look and feel like Neumorphism design with my wonderful CSS skill (please don't look at it).
 
-      Solarized flips between light and dark modes. In each mode, four monotones form the core values (with an optional fifth for emphasized content).
-      "
+    <br>
+    If you haven't tried pressing "Solarized" yet, please try.
     </OneCommand>
     <div class="empty-spaces"></div>
     <div class="nothing-ness"
@@ -85,6 +90,33 @@ span.bold {
 }
 span.emph {
   color: var(--emph);
+}
+
+#profile-pic {
+  width: 10em;
+  margin: 10px;
+}
+
+#photograph {
+  width: 21em;
+  margin: 10px;
+}
+
+a > img:hover {
+  opacity: 0.7;
+}
+
+.neuimg {
+  border-radius: 10%;
+  display: inline-block;
+  box-shadow: -2px -2px 4px 0 rgba(255, 255, 255, 0.25),
+               3px 3px 4px 0 rgba(0, 0, 0, 0.5);
+  opacity: 0.9;
+}
+
+.neuimg:active {
+  box-shadow: 2px 2px 1px 0 rgba(0, 0, 0, 0.02),
+              -2px -2px 5px 0 rgba(255, 255, 255, 0.1);
 }
 
 .empty-spaces {
