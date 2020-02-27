@@ -83,8 +83,8 @@ export default {
   font-weight: 600;
   padding: 5px;
   text-align: center;
-  box-shadow: -3px -4px 8px 0 rgba(255, 255, 255, 0.1),
-              8px 8px 10px 0 rgba(0, 0, 0, 0.2);
+  box-shadow: -3px -3px 6px 0 rgba(255, 255, 255, 0.1),
+              4px 6px 8px 0 rgba(0, 0, 0, 0.2);
   border-radius: 3px;
   background-color: var(--background);
   display: inline-block;
@@ -98,8 +98,9 @@ export default {
   */
 }
 .neuactive, .neubutton:active {
-  box-shadow: 11px 6px 20px 0 rgba(0, 0, 0, 0.05) inset,
-               7px 7px 23px 0 rgba(0, 0, 0, 0.05) inset,
+  box-shadow: 11px 6px 20px 0 rgba(0, 0, 0, 0.1) inset,
+               -7px -7px 10px 0 rgba(255, 255, 255, 0.05) inset,
+               2px 2px 1px 0 rgba(0, 0, 0, 0.02),
               -3px -4px 8px 0 rgba(255, 255, 255, 0.1);
   background-color: var(--background);
 }

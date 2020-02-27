@@ -88,8 +88,10 @@ export default {
   */
 }
 .neuactive, .neubutton:active {
-  box-shadow: 11px 6px 20px 0 rgba(0, 0, 0, 0.10) inset,
-               7px 7px 10px 0 rgba(0, 0, 0, 0.10) inset,
+  box-shadow: -11px -6px 14px 0 rgba(255, 255, 255, 0.04) inset,
+               7px 7px 10px 0 rgba(0, 0, 0, 0.16) inset,
+               2px 2px 1px 0 rgba(0, 0, 0, 0.02),
+              2px 2px 5px 0 rgba(0, 0, 0, 0.01) inset,
               -2px -2px 5px 0 rgba(255, 255, 255, 0.1);
   background-color: var(--background);
   color: var(--comment);

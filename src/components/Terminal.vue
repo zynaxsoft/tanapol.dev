@@ -77,7 +77,7 @@ export default {
 
 <style scoped>
 span.bullet {
-  margin-left: 2em;
+  margin-left: 1.8em;
   font-weight: 600;
 }
 span.bold {
