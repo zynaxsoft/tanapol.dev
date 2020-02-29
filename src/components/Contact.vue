@@ -1,6 +1,12 @@
 <template>
   <div class="contact">
-    yea this is a contact
+  Feel free to contact me! I can be reached by:
+  <ul>
+  <li>Twitter: tanapoldev</li>
+  <li>Email: me@tanapol.dev</li>
+  <li>linkedin: tanapol-pr</li>
+  </ul>
+  Or you could just press the buttons above 😅.
   </div>
 </template>
 
@@ -30,4 +36,7 @@ export default {
 </script>
 
 <style scoped>
+.contact {
+  line-height: 1.6em;
+}
 </style>

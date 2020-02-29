@@ -4,17 +4,18 @@
     <a href=/me.png target="_blank">
       <img src="/me.png" id="profile-pic" class="neuimg"><br>
     </a>
-    <i>"Hi! I am Tanapol Prucksakorn, a full stack engineer, a recent graduated Ph.D., and an enthusiastic software developer that loves and enjoys building software with new technologies."</i>
+    <i>"Hi! I am Tanapol Prucksakorn, a full-stack engineer, a Ph.D., and an enthusiastic software developer that loves and enjoys building software with new technologies."</i>
     <br><br>
     After, I received my Ph.D. degree in Robotics from JAIST. I joined QBIT Robotics to develop and design Omotenashi System and other software. I have maintained, developed software from scratch.
     <br><br>
     My knowledge and experiences include:<br>
-    <span class="bullet">*</span> Software development in Python.<br>
+    <span class="bullet">*</span> Software development<br>
     <span class="bullet">*</span> AWS, Docker, NGINX, Django, Git, GNU/Linux.<br>
     <span class="bullet">*</span> Machine Learning: Deep learning, Reinforcement learning, etc.<br>
     <span class="bullet">*</span> Robotics and a little bit of Neuroscience.<br>
     Furthermore, I am developing my new skills such as Rust, Microservices, and Front-end software.
     <br>
+    Photography is one of my hobbies. My photography portfolio can be seen below.
     <a href="https://photo.tanapol.dev/" target="_blank">
       <img src="@/assets/photograph.jpg" id="photograph" class="neuimg"><br>
     </a>
@@ -24,6 +25,7 @@
 
     <br>
     If you haven't tried pressing "Solarized" yet, please try.
+    <br>
     </OneCommand>
     <div class="empty-spaces"></div>
     <div class="nothing-ness"
@@ -136,6 +138,6 @@ a {
   color: var(--green);
 }
 .command {
-  line-height: 1.4;
+  line-height: 1.6em;
 }
 </style>

@@ -43,6 +43,12 @@ export default {
           page: "/contact",
           event: "",
         },
+        {
+          id: 2,
+          text: "CV",
+          page: "/cv",
+          event: "",
+        },
       ],
       showButtons: true,
     }

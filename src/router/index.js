@@ -3,6 +3,7 @@ import Router from 'vue-router'
 
 import Terminal from '@/components/Terminal.vue'
 import Contact from '@/components/Contact.vue'
+import CV from '@/components/CV.vue'
 
 Vue.use(Router)
 
@@ -22,6 +23,14 @@ export default new Router({
       component: Contact,
       meta: {
         title: 'Contact Tanapol',
+      }
+    },
+    {
+      path: '/cv',
+      name: 'CV',
+      component: CV,
+      meta: {
+        title: 'Curriculum Vitae',
       }
     },
   ]
