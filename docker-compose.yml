@@ -1,0 +1,11 @@
+version: "3.4"
+
+services:
+
+  landing:
+    restart: always
+    image: tanapol.dev:latest
+    build:
+      ${HOME}/tanapol.dev
+    ports:
+      - "8080:80"
