@@ -14,15 +14,16 @@
     <span class="bullet">*</span> Machine Learning: Deep learning, Reinforcement learning, etc.<br>
     <span class="bullet">*</span> Robotics and a little bit of Neuroscience.<br>
     Furthermore, I am developing my new skills such as Rust, Microservices, and Front-end software.
-    <br>
+    <br><br>
     Photography is one of my hobbies. My photography portfolio can be seen below.
     <a href="https://photo.tanapol.dev/" target="_blank">
       <img src="@/assets/photograph.jpg" id="photograph" class="neuimg"><br>
     </a>
     </OneCommand>
+
+
     <OneCommand v-if="curSeq > 0" @done="done" cmdtxt="cat site-inspiration.txt" :showLastPrompt="true">
     About this website. I crated this website with my basic knowledge of JavaScript + Vue-cli. I chose the design to be terminal-like. The color theme I use is the famous Solarized color palette. I tried to make the website look and feel like Neumorphism design with my wonderful CSS skill (please don't look at it).
-
     <br>
     If you haven't tried pressing "Solarized" yet, please try.
     <br>
