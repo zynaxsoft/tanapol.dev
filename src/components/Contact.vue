@@ -4,7 +4,7 @@
   <ul>
   <li>Twitter: tanapoldev</li>
   <li>Email: me@tanapol.dev</li>
-  <li>linkedin: tanapol-pr</li>
+  <li>Linkedin: tanapol-pr</li>
   </ul>
   Or you could just press the buttons above 😅.
   </div>
