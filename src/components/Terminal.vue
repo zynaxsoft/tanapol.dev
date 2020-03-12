@@ -23,7 +23,7 @@
 
 
     <OneCommand v-if="curSeq > 0" @done="done" cmdtxt="cat site-inspiration.txt" :showLastPrompt="true">
-    About this website. I crated this website with my basic knowledge of JavaScript + Vue-cli. I chose the design to be terminal-like. The color theme I use is the famous Solarized color palette. I tried to make the website look and feel like Neumorphism design with my wonderful CSS skill (please don't look at it).
+    About this website. I created this website with my basic knowledge of JavaScript + Vue-cli. I chose the design to be terminal-like. The color theme I use is the famous Solarized color palette. I tried to make the website look and feel like Neumorphism design with my wonderful CSS skill (please don't look at it).
     You can see the code on my <a href="https://github.com/zynaxsoft/tanapol.dev">repo</a>.
     <br><br>
     If you haven't tried pressing "Solarized" yet, please try.
