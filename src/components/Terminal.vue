@@ -9,20 +9,28 @@
     After, I received my Ph.D. degree in Robotics from JAIST. I joined QBIT Robotics to develop and design Omotenashi System and other software. I have maintained, developed software from scratch.
     <br><br>
     My knowledge and experiences include:<br>
-    <span class="bullet">*</span> Software development<br>
+    <span class="bullet">*</span> Software development in Python, Rust, etc.<br>
     <span class="bullet">*</span> AWS, Docker, NGINX, Django, Git, GNU/Linux.<br>
     <span class="bullet">*</span> Machine Learning: Deep learning, Reinforcement learning, etc.<br>
     <span class="bullet">*</span> Robotics and a little bit of Neuroscience.<br>
-    Furthermore, I am developing my new skills such as Rust, Microservices, and Front-end software.
-    <br><br>
+    <br>
     Photography is one of my hobbies. My photography portfolio can be seen below.
     <a href="https://photo.tanapol.dev/" target="_blank">
       <img src="@/assets/photograph.jpg" id="photograph" class="neuimg"><br>
     </a>
     </OneCommand>
 
+    <OneCommand v-if="curSeq > 0" @done="newSeq" cmdtxt="bat projects.txt">
+    Here are some small Rust projects that might interest you.<br><br>
+    <a href="https://static.tanapol.dev/game-of-life">
+    <img src="https://raw.githubusercontent.com/zynaxsoft/rust-wasm-game-of-life/master/game-of-life-demo.gif
+" class="neuimg" width="50%"><br>
+    Game of life with WASM</a><br>
+    <a href="https://static.tanapol.dev/snake">
+    Snake game with WASM</a><br>
+    </OneCommand>
 
-    <OneCommand v-if="curSeq > 0" @done="done" cmdtxt="cat site-inspiration.txt" :showLastPrompt="true">
+    <OneCommand v-if="curSeq > 1" @done="done" cmdtxt="cat site-inspiration.txt" :showLastPrompt="true">
     About this website. I created this website with my basic knowledge of JavaScript + Vue-cli. I chose the design to be terminal-like. The color theme I use is the famous Solarized color palette. I tried to make the website look and feel like Neumorphism design with my wonderful CSS skill (please don't look at it).
     You can see the code on my <a href="https://github.com/zynaxsoft/tanapol.dev">repo</a>.
     <br><br>
