@@ -11,6 +11,8 @@
     <SocialButton v-if="showButtons" social="twitter" link="https://www.twitter.com/tanapoldev" />
     <SocialButton v-if="showButtons" social="linkedin" link="https://www.linkedin.com/in/tanapol-pr" />
     <SocialButton v-if="showButtons" social="mail" link="mailto:me@tanapol.dev" />
+    <br>
+    <a v-if="showButtons" href="https://static.tanapol.dev/gpg" title="E107 70F0 BA34 F84F DFA8  F272 7EA1 63BF EC31 6740">pgp</a>
   </div>
 </template>
 
@@ -85,5 +87,8 @@ export default {
 }
 .button-link:visited {
   text-decoration: none;
+}
+a {
+  color: var(--green);
 }
 </style>
