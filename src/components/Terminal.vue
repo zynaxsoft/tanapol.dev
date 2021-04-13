@@ -7,12 +7,14 @@
     <i>"Hi! I am Tanapol Prucksakorn, a full-stack engineer, a Ph.D., and an enthusiastic software developer that loves and enjoys building software with new technologies."</i>
     <br><br>
     After, I received my Ph.D. degree in Robotics from JAIST. I joined QBIT Robotics to develop and design Omotenashi System and other software. I have maintained, developed software from scratch.
+    Currently, I am enjoying creating new things at Dynamic Map Platform.
     <br><br>
     My knowledge and experiences include:<br>
     <span class="bullet">*</span> Software development in Python, Rust, etc.<br>
-    <span class="bullet">*</span> AWS, Docker, NGINX, Django, Git, GNU/Linux.<br>
+    <span class="bullet">*</span> AWS services, Terraform, Docker, NGINX, Django, Git, GNU/Linux.<br>
     <span class="bullet">*</span> Machine Learning: Deep learning, Reinforcement learning, etc.<br>
     <span class="bullet">*</span> Robotics and a little bit of Neuroscience.<br>
+    <span class="bullet">*</span> And more...<br>
     <br>
     Photography is one of my hobbies. My photography portfolio can be seen below.
     <a href="https://photo.tanapol.dev/" target="_blank">
