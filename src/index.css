@@ -1,0 +1,102 @@
+@import './styles/bento.css';
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  /* Default: Macchiato */
+  --color-base: 36 39 58;
+  --color-surface0: 54 58 79;
+  --color-overlay0: 110 115 141;
+  --color-text: 202 211 245;
+  --color-subtext0: 165 173 203;
+  --color-green: 166 218 149;
+  --color-mauve: 198 160 246;
+  --color-peach: 245 169 127;
+  --color-red: 237 135 150;
+}
+
+.theme-latte {
+  --color-base: 239 241 245;
+  --color-surface0: 204 208 218;
+  --color-overlay0: 156 160 176;
+  --color-text: 76 79 105;
+  --color-subtext0: 108 111 133;
+  --color-green: 64 160 43;
+  --color-mauve: 136 57 239;
+  --color-peach: 254 100 11;
+  --color-red: 210 15 57;
+}
+
+.theme-frappe {
+  --color-base: 48 52 70;
+  --color-surface0: 65 69 89;
+  --color-overlay0: 115 121 148;
+  --color-text: 198 208 245;
+  --color-subtext0: 165 173 206;
+  --color-green: 166 209 137;
+  --color-mauve: 202 158 230;
+  --color-peach: 239 159 118;
+  --color-red: 231 130 132;
+}
+
+.theme-mocha {
+  --color-base: 30 30 46;
+  --color-surface0: 49 50 68;
+  --color-overlay0: 108 112 134;
+  --color-text: 205 214 244;
+  --color-subtext0: 166 173 200;
+  --color-green: 166 227 161;
+  --color-mauve: 203 166 247;
+  --color-peach: 250 179 135;
+  --color-red: 243 139 168;
+}
+
+html, body {
+  height: 100%;
+}
+
+body {
+  @apply bg-bg text-text font-mono overflow-x-hidden;
+  /* Minimal texture background instead of heavy scanlines */
+  background-image: radial-gradient(rgba(var(--color-surface0), 0.3) 1px, transparent 1px);
+  background-size: 20px 20px;
+  
+  /* CRT Text Effect: Subtle bloom and very slight RGB shift */
+  text-shadow:
+    0 0 4px rgba(var(--color-text), 0.3),
+    1.5px 0 2px rgba(255, 0, 0, 0.2),
+    -1.5px 0 2px rgba(0, 0, 255, 0.2);
+}
+
+/* Scrollbar Customization */
+::-webkit-scrollbar {
+  width: 10px;
+}
+::-webkit-scrollbar-track {
+  @apply bg-bg;
+}
+::-webkit-scrollbar-thumb {
+  @apply bg-surface rounded;
+  border: 2px solid theme('colors.bg');
+}
+::-webkit-scrollbar-thumb:hover {
+  @apply bg-overlay;
+}
+
+/* Removed global CRT overlay .crt::before as requested */
+
+.crt-flicker {
+  animation: flicker 0.15s infinite;
+}
+
+/* Text Glow (Bloom) - Enhanced for specific elements */
+.text-glow {
+  text-shadow: 0 0 5px rgba(var(--color-green), 0.5),
+               0 0 10px rgba(var(--color-green), 0.3);
+}
+
+.theme-latte .text-glow {
+  text-shadow: none; /* Less glow on light mode */
+}

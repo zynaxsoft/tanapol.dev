@@ -1,0 +1,172 @@
+/* ============================================
+   NEUMORPHISM CONTAINER
+   (Inspired by original v1 design)
+   ============================================ */
+
+/* Outer container with neumorphism border effects */
+.neuro-container {
+    max-width: 840px;
+    width: 90vw;
+    margin: 2rem auto;
+    padding: 1.5rem;
+    border-radius: 12px;
+    position: relative;
+    /* Neumorphism dual-shadow effect */
+    box-shadow: -5px -6px 8px 0 rgba(255, 255, 255, 0.02),
+      14px 18px 10px 0 rgba(0, 0, 0, 0.1);
+    transition: box-shadow 0.3s ease;
+  }
+
+  /* Light mode (Latte) neumorphism adjustment */
+  .theme-latte .neuro-container {
+    box-shadow: -6px -6px 11px 0 rgba(255, 255, 255, 0.4),
+      14px 18px 10px 0 rgba(0, 0, 0, 0.1);
+  }
+
+  /* ============================================
+     GLASSMORPHISM CARDS
+     ============================================ */
+
+  /* Individual cards with glassmorphism + neumorphism effect */
+  .glass-card {
+    background: rgb(var(--color-surface0) / 0.4);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgb(var(--color-overlay0) / 0.2);
+    border-radius: 12px;
+    padding: 1.5rem;
+    margin-bottom: 2rem;
+    transition: all 0.3s cubic-bezier(0.22, 1, 0.36, 1);
+    position: relative;
+    /* Neumorphism shadows for cards - subtle for dark mode */
+    box-shadow: -3px -3px 6px 0 rgba(255, 255, 255, 0.02),
+      6px 8px 12px 0 rgba(0, 0, 0, 0.2),
+      inset 0 0 0 1px rgb(var(--color-overlay0) / 0.1);
+  }
+
+  /* Card hover effects - enhanced neumorphism + glow */
+  .glass-card:hover {
+    transform: translateY(-4px);
+    border-color: rgb(var(--color-green) / 0.5);
+    /* Stronger neumorphism + accent glow on hover */
+    box-shadow: -4px -4px 8px 0 rgba(255, 255, 255, 0.03),
+      8px 12px 20px 0 rgba(0, 0, 0, 0.3),
+      0 0 20px rgb(var(--color-green) / 0.2),
+      inset 0 0 0 1px rgb(var(--color-green) / 0.2);
+  }
+
+  /* Light mode (Latte) glass card adjustments */
+  .theme-latte .glass-card {
+    background: rgb(var(--color-surface0) / 0.6);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    /* Stronger neumorphism shadows for light mode */
+    box-shadow: -4px -4px 8px 0 rgba(255, 255, 255, 0.5),
+      6px 8px 12px 0 rgba(0, 0, 0, 0.15),
+      inset 0 0 0 1px rgb(var(--color-overlay0) / 0.15);
+  }
+
+  /* Light mode hover - enhanced effect */
+  .theme-latte .glass-card:hover {
+    box-shadow: -5px -5px 10px 0 rgba(255, 255, 255, 0.6),
+      8px 12px 20px 0 rgba(0, 0, 0, 0.2),
+      0 0 20px rgb(var(--color-green) / 0.3),
+      inset 0 0 0 1px rgb(var(--color-green) / 0.25);
+  }
+
+  /* Remove margin from last card */
+  .glass-card:last-child {
+    margin-bottom: 0;
+  }
+
+  /* ============================================
+     NEUMORPHISM FOR TERMINAL CARDS
+     ============================================ */
+
+  .terminal-card {
+    box-shadow: -3px -3px 6px 0 rgba(255, 255, 255, 0.02),
+      6px 8px 12px 0 rgba(0, 0, 0, 0.25),
+      inset 0 1px 0 0 rgba(255, 255, 255, 0.05);
+  }
+
+  .theme-latte .terminal-card {
+    box-shadow: -4px -4px 8px 0 rgba(255, 255, 255, 0.6),
+      6px 8px 12px 0 rgba(0, 0, 0, 0.12),
+      inset 0 1px 0 0 rgba(255, 255, 255, 0.8);
+  }
+
+  /* ============================================
+     NEUMORPHISM FOR PROJECT CARDS
+     ============================================ */
+
+  .project-card {
+    box-shadow: -2px -2px 4px 0 rgba(255, 255, 255, 0.02),
+      4px 6px 10px 0 rgba(0, 0, 0, 0.2),
+      inset 0 0 0 1px rgb(var(--color-overlay0) / 0.1);
+    transition: all 0.3s cubic-bezier(0.22, 1, 0.36, 1);
+  }
+
+  .project-card:hover {
+    box-shadow: -3px -3px 6px 0 rgba(255, 255, 255, 0.03),
+      6px 10px 16px 0 rgba(0, 0, 0, 0.3),
+      0 0 15px rgb(var(--color-green) / 0.2),
+      inset 0 0 0 1px rgb(var(--color-green) / 0.2);
+  }
+
+  .theme-latte .project-card {
+    box-shadow: -3px -3px 6px 0 rgba(255, 255, 255, 0.5),
+      4px 6px 10px 0 rgba(0, 0, 0, 0.12),
+      inset 0 0 0 1px rgb(var(--color-overlay0) / 0.15);
+  }
+
+  .theme-latte .project-card:hover {
+    box-shadow: -4px -4px 8px 0 rgba(255, 255, 255, 0.6),
+      6px 10px 16px 0 rgba(0, 0, 0, 0.18),
+      0 0 15px rgb(var(--color-green) / 0.25),
+      inset 0 0 0 1px rgb(var(--color-green) / 0.3);
+  }
+
+  /* ============================================
+     NEUMORPHISM FOR SOCIAL LINK ITEMS
+     ============================================ */
+
+  .social-link-item {
+    box-shadow: -2px -2px 4px 0 rgba(255, 255, 255, 0.02),
+      3px 4px 8px 0 rgba(0, 0, 0, 0.15),
+      inset 0 0 0 1px rgb(var(--color-overlay0) / 0.08);
+    transition: all 0.3s cubic-bezier(0.22, 1, 0.36, 1);
+  }
+
+  .social-link-item:hover {
+    box-shadow: -3px -3px 6px 0 rgba(255, 255, 255, 0.03),
+      4px 6px 12px 0 rgba(0, 0, 0, 0.2),
+      0 0 12px rgb(var(--color-green) / 0.15),
+      inset 0 0 0 1px rgb(var(--color-green) / 0.15);
+  }
+
+  .theme-latte .social-link-item {
+    box-shadow: -3px -3px 5px 0 rgba(255, 255, 255, 0.5),
+      3px 4px 8px 0 rgba(0, 0, 0, 0.1),
+      inset 0 0 0 1px rgb(var(--color-overlay0) / 0.12);
+  }
+
+  .theme-latte .social-link-item:hover {
+    box-shadow: -4px -4px 7px 0 rgba(255, 255, 255, 0.6),
+      4px 6px 12px 0 rgba(0, 0, 0, 0.15),
+      0 0 12px rgb(var(--color-green) / 0.2),
+      inset 0 0 0 1px rgb(var(--color-green) / 0.25);
+  }
+
+  /* ============================================
+     FALLBACK FOR BROWSERS WITHOUT BACKDROP-FILTER
+     ============================================ */
+
+@supports not (backdrop-filter: blur(12px)) {
+  .glass-card {
+    background: rgb(var(--color-surface0) / 0.85);
+  }
+
+  .theme-latte .glass-card {
+    background: rgb(var(--color-surface0) / 0.9);
+  }
+}
