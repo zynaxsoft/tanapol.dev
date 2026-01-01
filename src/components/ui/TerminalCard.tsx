@@ -2,27 +2,27 @@ import React, { useState } from 'react';
 import Typewriter from '../terminal/Typewriter';
 
 interface TerminalCardProps {
-  skills: string[];
+  command: string;
+  content: string;
+  filename?: string;
 }
 
 /**
  * TerminalCard Component
  *
- * Displays skills/capabilities in a terminal-style window with typewriter animation.
+ * Displays content in a terminal-style window with typewriter animation.
  * Reuses the existing Typewriter component for text animation.
  *
  * Props:
- * - skills: Array of capability strings to display
+ * - command: The command to display (e.g., "cat capabilities.json")
+ * - content: The content to display (e.g., JSON string)
+ * - filename: Optional filename for the terminal header (defaults to extracting from command)
  */
-const TerminalCard: React.FC<TerminalCardProps> = ({ skills }) => {
+const TerminalCard: React.FC<TerminalCardProps> = ({ command, content, filename }) => {
   const [isTyping, setIsTyping] = useState(true);
 
-  // Format skills as JSON-like structure for terminal display
-  const terminalContent = `{
-  "capabilities": [
-${skills.map((skill, i) => `    "${skill}"${i < skills.length - 1 ? ',' : ''}`).join('\n')}
-  ]
-}`;
+  // Extract filename from command if not provided
+  const displayFilename = filename || command.split(' ').pop() || 'terminal';
 
   return (
     <div className="terminal-card bg-bg/80 rounded-lg border border-overlay/20 overflow-hidden">
@@ -33,7 +33,7 @@ ${skills.map((skill, i) => `    "${skill}"${i < skills.length - 1 ? ',' : ''}`).
           <div className="w-3 h-3 rounded-full bg-accent"></div>
           <div className="w-3 h-3 rounded-full bg-primary"></div>
         </div>
-        <span className="text-xs font-mono text-subtext ml-2">capabilities.json</span>
+        <span className="text-xs font-mono text-subtext ml-2">{displayFilename}</span>
       </div>
 
       {/* Terminal content with prompt */}
@@ -41,13 +41,13 @@ ${skills.map((skill, i) => `    "${skill}"${i < skills.length - 1 ? ',' : ''}`).
         <div className="flex gap-2 mb-2">
           <span className="text-secondary">➜</span>
           <span className="text-primary">~</span>
-          <span className="text-text">cat capabilities.json</span>
+          <span className="text-text">{command}</span>
         </div>
 
-        {/* Typewriter effect for skills */}
+        {/* Typewriter effect for content */}
         <div className="text-subtext whitespace-pre-wrap">
           <Typewriter
-            text={terminalContent}
+            text={content}
             speed={15}
             onComplete={() => setIsTyping(false)}
             cursor={isTyping}

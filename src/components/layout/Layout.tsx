@@ -28,7 +28,7 @@ const Layout: React.FC = () => {
       <footer className="border-t-2 border-surface py-4 text-center text-sm text-subtext z-10 bg-bg/90 backdrop-blur-sm">
         <p>
           <span className="text-primary">root@tanapol.dev</span>:
-          <span className="text-secondary">~</span>$ echo "Built with React & Catppuccin"
+          <span className="text-secondary">~</span>$ echo "Let's build something great together."
         </p>
       </footer>
     </div>

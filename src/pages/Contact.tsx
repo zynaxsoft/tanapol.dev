@@ -28,8 +28,8 @@ const Contact: React.FC = () => {
     },
     {
       name: "Email",
-      value: "me@tanapol.dev",
-      link: "mailto:me@tanapol.dev",
+      value: "contact@tanapol.dev",
+      link: "mailto:contact@tanapol.dev",
       icon: Mail,
       color: "text-green-400",
     },

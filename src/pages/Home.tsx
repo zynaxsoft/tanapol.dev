@@ -31,13 +31,15 @@ const Home: React.FC = () => {
     },
   };
 
-  // Content data
-  const skills = [
-    "Software development in Python, Rust, TypeScript",
-    "AWS services, Terraform, Docker, NGINX",
-    "Machine Learning: Deep learning, Reinforcement learning",
-    "Robotics & Neuroscience",
-  ];
+  // Content data - structured TOML for capabilities
+  const skillsTomlContent = `programming = ["Rust", "Python", "Kotlin", "TypeScript"]
+cloud_infrastructure = ["AWS", "Terraform", "Docker", "NGINX"]
+specializations = ["SaaS Development", "Machine Learning", "Robotics"]
+
+[full_stack]
+backend = ["REST APIs", "Microservices"]
+frontend = ["React", "Recoil", "Styled-Components"]
+database = ["PostgreSQL"]`;
 
   const projects = [
     {
@@ -97,26 +99,31 @@ const Home: React.FC = () => {
                 {/* Bio Text */}
                 <div className="flex-1 space-y-4">
                   <p className="text-text leading-relaxed">
-                    Hi! I am Tanapol Prucksakorn, a full-stack engineer, a
-                    Ph.D., and an enthusiastic software developer that loves and
-                    enjoys building software with new technologies.
+                    Hi! I am Tanapol Prucksakorn, a full-stack engineer and
+                    Ph.D. holder who is deeply passionate about software
+                    development. I absolutely love exploring and building with
+                    new technologies, and I find genuine joy in crafting
+                    innovative solutions.
                   </p>
 
                   <p className="text-subtext leading-relaxed">
-                    After I received my{" "}
+                    After completing my{" "}
                     <span className="text-primary font-semibold">
                       Ph.D. in Robotics
-                    </span>{" "}
-                    from JAIST, I joined{" "}
+                    </span>
+                    , I worked at{" "}
                     <span className="text-secondary font-semibold">
                       QBIT Robotics
                     </span>{" "}
-                    to develop and design the Omotenashi System. Currently, I am
-                    creating new things at{" "}
-                    <span className="text-accent font-semibold">
+                    on the Omotenashi System, then at{" "}
+                    <span className="text-secondary font-semibold">
                       Dynamic Map Platform
+                    </span>{" "}
+                    on mapping software. Currently, I am at{" "}
+                    <span className="text-accent font-semibold">
+                      Exawizards
                     </span>
-                    .
+                    , challenging myself by building SaaS and AI products.
                   </p>
                 </div>
               </div>
@@ -125,11 +132,14 @@ const Home: React.FC = () => {
 
           {/* Terminal Skills Card */}
           <motion.div variants={cardVariants}>
-            <BentoCard hover={false}>
+            <BentoCard>
               <h2 className="text-2xl font-bold text-secondary mb-4">
-                Capabilities
+                Skills
               </h2>
-              <TerminalCard skills={skills} />
+              <TerminalCard
+                command="cat skills.toml"
+                content={skillsTomlContent}
+              />
             </BentoCard>
           </motion.div>
 
